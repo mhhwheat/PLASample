@@ -20,6 +20,8 @@
                 android:id="@+id/xlistview_header_hint_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearance"
+                android:textStyle="bold"
                 android:text="@string/xlistview_header_hint_normal" />
 
             <LinearLayout
@@ -30,6 +32,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
                     android:text="@string/xlistview_header_last_time"
                     android:textSize="12sp" />
 
@@ -37,6 +40,7 @@
                     android:id="@+id/xlistview_header_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
