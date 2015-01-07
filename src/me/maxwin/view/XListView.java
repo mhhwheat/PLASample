@@ -317,23 +317,6 @@ public class XListView extends MultiColumnListView implements OnScrollListener {
 		super.computeScroll();
 	}
 
-//	@Override
-//	public void setOnScrollListener(OnScrollListener l) {
-//		mScrollListener = l;
-//	}
-//
-//	@Override
-//	public void onScrollStateChanged(AbsListView view, int scrollState) {
-//		if (mScrollListener != null) {
-//			mScrollListener.onScrollStateChanged(view, scrollState);
-//		}
-//	}
-//
-//	@Override
-//	public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-
-//	}
-
 	public void setXListViewListener(IXListViewListener l) {
 		mListViewListener = l;
 	}
@@ -360,6 +343,13 @@ public class XListView extends MultiColumnListView implements OnScrollListener {
 		if (mScrollListener != null) {
 			mScrollListener.onScrollStateChanged(view, scrollState);
 		}
+		
+		//author:wheat
+		if(xlvOnScrollListener!=null)
+		{
+			xlvOnScrollListener.onScrollStateChanged(view, scrollState);
+		}
+		//author:
 	}
 
 	@Override
@@ -369,5 +359,29 @@ public class XListView extends MultiColumnListView implements OnScrollListener {
 		if (mScrollListener != null) {
 			mScrollListener.onScroll(view, firstVisibleItem, visibleItemCount, totalItemCount);
 		}	
+		
+		//author:wheat
+		if(xlvOnScrollListener!=null)
+		{
+			xlvOnScrollListener.onScroll(view, firstVisibleItem, visibleItemCount, totalItemCount);
+		}
+		//author:
+	}
+	
+	
+	/**
+	 * author:wheat
+	 */
+	private XListViewOnScrollListener xlvOnScrollListener;
+	
+	public void setXListViewOnScrollListener(XListViewOnScrollListener listener)
+	{
+		this.xlvOnScrollListener=listener;
+	}
+	
+	public interface XListViewOnScrollListener
+	{
+		public void onScrollStateChanged(PLA_AbsListView view, int scrollState);
+		public void onScroll(PLA_AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount);
 	}
 }

@@ -20,7 +20,7 @@
                 android:id="@+id/xlistview_header_hint_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearance"
+                android:textAppearance="?android:attr/textAppearanceMediumInverse"
                 android:textStyle="bold"
                 android:text="@string/xlistview_header_hint_normal" />
 
